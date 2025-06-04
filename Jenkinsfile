@@ -36,8 +36,9 @@ pipeline {
         stage('Deploy App') {
             steps {
                 sh '''
-                source ${VENV_DIR}/bin/activate
-                nohup python3 app.py > flask.log 2>&1 &
+                    #!/bin/bash
+                    source venv/bin/activate
+                    python app.py
                 '''
             }
         }
