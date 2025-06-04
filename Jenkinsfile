@@ -29,16 +29,14 @@ pipeline {
                 pytest
                 '''
             }
-        }
-
-        
+        }        
 
         stage('Deploy App') {
             steps {
                 sh '''
-                    #!/bin/bash
-                    source venv/bin/activate
-                    python app.py
+                    . venv/bin/activate
+                    # Add deployment commands below
+                    echo "Deploying app..."
                 '''
             }
         }
