@@ -22,15 +22,16 @@ pipeline {
                 '''
             }
         }
-
         stage('Run Tests') {
             steps {
-                sh '''
-                source ${VENV_DIR}/bin/activate
+                sh '''#!/bin/bash
+                source venv/bin/activate
                 pytest
                 '''
             }
         }
+
+        
 
         stage('Deploy App') {
             steps {
